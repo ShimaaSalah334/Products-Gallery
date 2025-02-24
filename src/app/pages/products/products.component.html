@@ -1,0 +1,59 @@
+<section class="home pt-5">
+  <div class="container mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      @for (product of productsList | search:searchTerm; track $index) {
+      <div
+        class="w-full shadow-sm rounded-lg dark:bg-gray-800 dark:border-gray-700 pb-2"
+      >
+        <a [routerLink]="['/details', product.id]">
+          <div class="card-img rounded-lg">
+            <img
+              class="rounded-lg w-full object-contain h-80"
+              [src]="product.image"
+              alt="product image"
+            />
+          </div>
+          <div class="card-body px-3 py-4">
+            <div class="title mb-1">
+              <h5 class="font-semibold text-black line-clamp-1">
+                {{ product.title }}
+              </h5>
+            </div>
+            <div class="description mb-4">
+              <p class="text-gray-450 text-sm line-clamp-1">
+                {{ product.description }}
+              </p>
+            </div>
+
+            <div
+              class="flex justify-between items-center space-x-3 rtl:space-x-reverse"
+            >
+              <div class="price mb-2">
+                <p class="text-orange-450 font-semibold">
+                  {{ product.price | currency : "EGP " }}
+                </p>
+              </div>
+              <div class="ratings flex items-center space-x-2">
+                <svg
+                  class="w-4 h-4 text-yellow-500"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 22 20"
+                >
+                  <path
+                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                  />
+                </svg>
+                <span class="text-gray-650 text-xs dark:text-blue-800 ms-3">
+                  {{ product.rating?.rate }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      }
+    </div>
+  </div>
+</section>

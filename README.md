@@ -1,6 +1,37 @@
 # ProductsGallery
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+This project is a web application built using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6. It serves as a gallery to display and manage products, providing a user-friendly interface for browsing and interacting with product data.
+
+## Project Description
+
+The **ProductsGallery** is an Angular-based application designed to showcase a collection of products. It includes features such as:
+
+- Displaying a list of products with details.
+- Interactive components for filtering or searching products.
+- Responsive design for optimal viewing on various devices.
+
+This project is ideal for learning Angular, exploring front-end development, or as a starting point for building more complex product management systems.
+
+## Styling
+
+This project uses [Tailwind CSS](https://tailwindcss.com/) for styling. Tailwind CSS was chosen for its utility-first approach, which allows for rapid and responsive UI development.
+
+## API Integration
+
+This project uses the [Fake Store API](https://fakestoreapi.com/products) to fetch and display product data. The API provides details such as product name, image, price, and description.
+
+## Dynamic Routing
+
+The product details page is implemented using **Angular routing**. Each product has a unique route (e.g., `/products/:id`), which is dynamically generated based on the product ID. Angular's `RouterModule` is used to handle navigation and retrieve the product ID from the URL.
+
+## Optional Enhancements
+
+- **Search Bar**: A search bar is implemented to filter products by name.
+- **Loading States**: Loading indicators are displayed while fetching data from the API.
+
+## Live Demo
+
+Check out the live demo of the project here: [Live Demo Link](#)
 
 ## Development server
 

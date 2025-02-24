@@ -1,0 +1,71 @@
+<app-navbar (searchTermChange)="onSearchTermChange($event)"></app-navbar>
+<aside
+  id="logo-sidebar"
+  class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 drop-shadow-2xl"
+  aria-label="Sidebar"
+>
+  <div
+    class="h-full px-5 pt-12 pb-4 text-black text-center overflow-y-auto bg-white dark:bg-gray-800"
+  >
+    <h2 class="text-3xl font-semibold pb-3 border-b border-b-gray-300 mb-3">
+      Filter Options
+    </h2>
+    <div class="categories pb-3 border-b border-b-gray-300 mb-3">
+      <h3 class="text-xl text-start font-bold mb-2">Categories</h3>
+      <ul class="text-start ps-4 font-semibold flex flex-col space-y-2">
+        <li>Dresses</li>
+        <li>Bags</li>
+        <li>Shoes</li>
+        <li>Accessories</li>
+        <li>Hair Care</li>
+        <li>Skin Care</li>
+      </ul>
+    </div>
+    <div class="price pb-3 border-b border-b-gray-300 mb-3">
+      <h3 class="text-xl text-start font-bold mb-6">Price</h3>
+
+      <div class="drange relative flex items-center max-w-[400px] h-[50px]">
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="20"
+          class="absolute w-full pointer-events-none appearance-none bg-transparent"
+          disabled
+        />
+        <div
+          class="range-fill absolute h-2 w-[49%] bg-orange-450 rounded-[10px] top-1/2 start-1/2 -translate-x-2/3 -translate-y-1/2"
+        ></div>
+
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="70"
+          class="absolute w-full pointer-events-none appearance-none bg-transparent"
+          disabled
+        />
+        <span
+          class="absolute start-1/4 -translate-x-1/2 rtl:translate-x-1/2 -top-3"
+          >100$</span
+        >
+        <span
+          class="absolute start-2/3 -translate-x-1/2 rtl:translate-x-1/2 -top-3"
+          >200$</span
+        >
+      </div>
+    </div>
+    <div class="promotions mb-3">
+      <h3 class="text-xl text-start font-bold mb-2">Promotions</h3>
+      <ul class="text-start ps-4 font-semibold flex flex-col space-y-2">
+        <li>New Arrivals</li>
+        <li>Best Sellers</li>
+        <li>Limited Edition</li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+<div class="p-4 pt-8 mt-14 sm:ml-64">
+  <app-products [searchTerm]="searchTerm"></app-products>
+</div>

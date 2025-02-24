@@ -1,0 +1,187 @@
+<section class="details py-6 mt-20">
+  <div class="container mx-auto flex flex-wrap items-center">
+    <div class="product-img w-full md:w-6/12">
+      <img
+        [src]="productData.image"
+        class="w-8/12 h-2/3 object-cover mx-auto rounded-2xl"
+        alt=""
+      />
+    </div>
+    <div class="product-data w-full md:w-6/12 px-5 self-start mt-10 lg:mt-24">
+      <div class="category mb-1">
+        <p class="text-gray-450 font-medium">
+          {{ productData.category }}
+        </p>
+      </div>
+      <div class="title mb-3.5">
+        <p class="text-black font-semibold text-2xl">
+          {{ productData.title }}
+        </p>
+      </div>
+      <div class="flex justify-between mb-6">
+        <div class="price">
+          <p class="text-orange-450 font-bold text-xl">
+            <span class="font-normal me-2">Price : </span
+            >{{ productData.price | currency : "EGP " }}
+          </p>
+        </div>
+        <div class="rating">
+          <p class="text-gray-450 font-semibold">
+            {{ productData.rating?.rate
+            }}<i class="fa-solid fa-star ms-2 text-yellow-500"></i>
+          </p>
+        </div>
+      </div>
+      <div class="description mb-6">
+        <p class="text-gray-450">{{ productData.description }}.</p>
+      </div>
+
+      <form>
+        <div class="relative flex items-center justify-between">
+          <div class="quantity flex items-center">
+            <button
+              type="button"
+              id="decrement-button"
+              data-input-counter-decrement="counter-input"
+              class="bg-orange-450 rounded-full w-8 h-8"
+            >
+              <svg
+                class="w-2.5 h-2.5 text-white mx-auto"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 2"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h16"
+                />
+              </svg>
+            </button>
+            <input
+              type="text"
+              id="counter-input"
+              data-input-counter
+              class="text-black border-0 bg-transparent text-sm font-semibold text-center max-w-[2.5rem]"
+              placeholder=""
+              value="0"
+              required
+            />
+            <button
+              type="button"
+              id="increment-button"
+              data-input-counter-increment="counter-input"
+              class="bg-orange-450 rounded-full w-8 h-8"
+            >
+              <svg
+                class="w-2.5 h-2.5 text-white mx-auto"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 1v16M1 9h16"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="add-to-cart">
+            <button
+              type="button"
+              id="decrement-button"
+              data-input-counter-decrement="counter-input"
+              class="bg-orange-450 rounded-full py-1 px-4 text-white text-sm me-3"
+            >
+              Add To Cart
+            </button>
+            <button
+              type="button"
+              id="decrement-button"
+              data-input-counter-decrement="counter-input"
+              class="bg-orange-450 rounded-full py-1 px-4 text-white text-sm"
+            >
+              Buy Now
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="related-products px-7">
+  <div class="container mx-auto">
+    <h2 class="text-black font-semibold text-xl text-center py-14">
+      Explore
+      <span class="text-orange-450">Related Products</span>
+    </h2>
+    <owl-carousel-o [options]="customOptions">
+      @for (product of relatedProducts; track $index) {
+      <ng-container>
+        <ng-template carouselSlide>
+          <div
+            class="w-full shadow-sm rounded-lg dark:bg-gray-800 dark:border-gray-700 pb-2"
+          >
+            <a [routerLink]="['/details', product.id]">
+              <div class="card-img rounded-lg">
+                <img
+                  class="rounded-lg w-full object-contain h-80"
+                  [src]="product.image"
+                  alt="product image"
+                />
+              </div>
+              <div class="card-body px-3 py-4">
+                <div class="title mb-1">
+                  <h5 class="font-semibold text-black line-clamp-1">
+                    {{ product.title }}
+                  </h5>
+                </div>
+                <div class="description mb-4">
+                  <p class="text-gray-450 text-sm line-clamp-1">
+                    {{ product.description }}
+                  </p>
+                </div>
+
+                <div
+                  class="flex justify-between items-center space-x-3 rtl:space-x-reverse"
+                >
+                  <div class="price mb-2">
+                    <p class="text-orange-450 font-semibold">
+                      {{ product.price | currency : "EGP " }}
+                    </p>
+                  </div>
+                  <div class="ratings flex items-center space-x-2">
+                    <svg
+                      class="w-4 h-4 text-yellow-500"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 22 20"
+                    >
+                      <path
+                        d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
+                      />
+                    </svg>
+                    <span class="text-gray-650 text-xs dark:text-blue-800 ms-3"
+                      >{{ product.rating?.rate }}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </ng-template>
+      </ng-container>
+
+      }
+    </owl-carousel-o>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+.drange {
+  input[type="range"] {
+    &::-webkit-slider-thumb {
+      pointer-events: all;
+      width: 20px;
+      height: 20px;
+      border: 0;
+      border-radius: 50%;
+      background: #cb5207;
+      cursor: pointer;
+      margin-top: -7px;
+    }
+    &::-moz-range-thumb {
+      pointer-events: all;
+      width: 20px;
+      height: 20px;
+      border: 0;
+      border-radius: 50%;
+      background: #cb5207;
+      cursor: pointer;
+    }
+    &:first-child::-webkit-slider-runnable-track {
+      background: #d4d4d4;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -moz-border-radius: 10px;
+      -ms-border-radius: 10px;
+      -o-border-radius: 10px;
+    }
+    &:first-child::-moz-range-track {
+      background: #d4d4d4;
+      border-radius: 10px;
+    }
+    &::-webkit-slider-runnable-track {
+      height: 8px;
+    }
+    &::-moz-range-track {
+      height: 8px;
+    }
+  }
+}
+/* For Webkit browsers */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 3px;
+}
