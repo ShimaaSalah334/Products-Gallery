@@ -7,7 +7,6 @@ import {
 import express from 'express';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getPrerenderParams } from '../prerender-params';
 
 const serverDistFolder = dirname(fileURLToPath(import.meta.url));
 const browserDistFolder = resolve(serverDistFolder, '../browser');
@@ -37,22 +36,7 @@ app.use(
     redirect: false,
   }),
 );
-app.get('/details/:id', async (req, res, next) => {
-  const params = await getPrerenderParams(); // Fetch the list of IDs
-  const id = req.params.id;
 
-  // Check if the ID is in the list of prerendered IDs
-  if (params.some((param) => param.id === id)) {
-    angularApp
-      .handle(req)
-      .then((response) =>
-        response ? writeResponseToNodeResponse(response, res) : next(),
-      )
-      .catch(next);
-  } else {
-    next(); // Skip prerendering for unknown IDs
-  }
-});
 /**
  * Handle all other requests by rendering the Angular application.
  */

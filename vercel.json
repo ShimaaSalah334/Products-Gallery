@@ -1,8 +1,0 @@
-{
-  "routes": [
-    {
-      "src": "/details/(?<id>[^/]+)",
-      "dest": "/details/[id]"
-    }
-  ]
-}

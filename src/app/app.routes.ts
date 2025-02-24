@@ -29,6 +29,9 @@ export const routes: Routes = [
         (c) => c.DetailsComponent
       ),
     title: 'product Details',
+    data: {
+      renderMode: 'default' // Forces Client-Side Rendering (CSR)
+    }
   },
   {
     path: '**',
