@@ -1,5 +1,5 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withHashLocation } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
@@ -10,6 +10,7 @@ import { sppinerInterceptor } from './core/interceptors/sppiner.interceptor';
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(withEventReplay()),
   provideHttpClient(withFetch(), withInterceptors([sppinerInterceptor])),
-  provideAnimations()
+  provideAnimations(),
+  provideRouter(routes, withHashLocation()),
   ]
 };
