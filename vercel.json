@@ -4,12 +4,5 @@
       "source": "/details/:id",
       "destination": "/details/[id]"
     }
-  ],
-  "routes": [
-    {
-      "src": "/details/(.*)",
-      "dest": "/details/[id]",
-      "renderMode": "default"
-    }
   ]
 }
