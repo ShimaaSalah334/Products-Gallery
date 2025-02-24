@@ -37,9 +37,7 @@ app.use(
   }),
 );
 
-app.get('/details/:id', (req, res) => {
-  res.sendFile(resolve(browserDistFolder, 'index.html'));
-});
+
 /**
  * Handle all other requests by rendering the Angular application.
  */
