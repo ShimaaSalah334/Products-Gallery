@@ -1,8 +1,11 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/details/:id",
-      "destination": "/details/[id]"
+      "src": "/details/:id",
+      "dest": "/details/[id]",
+      "prerender": {
+        "getPrerenderParams": "./prerender-params.js"
+      }
     }
   ]
 }
