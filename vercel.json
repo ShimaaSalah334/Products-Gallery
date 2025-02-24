@@ -1,9 +1,11 @@
 {
-  "routes": [
+  "prerender": {
+    "fallback": false
+  },
+  "rewrites": [
     {
-      "src": "/details/:id",
-      "dest": "/details/[id]",
-      "getPrerenderParams": "./prerender-params.js"
+      "source": "/details/:id",
+      "destination": "/details/[id]"
     }
   ]
 }
