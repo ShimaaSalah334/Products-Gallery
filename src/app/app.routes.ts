@@ -29,6 +29,7 @@ export const routes: Routes = [
         (c) => c.DetailsComponent
       ),
     title: 'product Details',
+    data: { renderMode: 'client' },
   },
   {
     path: '**',
