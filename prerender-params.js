@@ -1,12 +1,12 @@
-const fetch = require("node-fetch");
+const axios = require("axios");
 
 module.exports = async function getPrerenderParams() {
   try {
-    // Fetch product IDs from API
-    const response = await fetch("https://fakestoreapi.com/products");
-    const products = await response.json();
+    // Fetch products from your API
+    const response = await axios.get("https://fakestoreapi.com/products");
+    const products = response.data;
 
-    // Extract IDs and return in the required format
+    // Map product IDs for prerendering
     return products.map((product) => ({ id: String(product.id) }));
   } catch (error) {
     console.error("Error fetching product IDs for prerendering:", error);
