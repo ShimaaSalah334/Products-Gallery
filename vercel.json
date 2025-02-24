@@ -3,7 +3,6 @@
     {
       "src": "/details/:id",
       "dest": "/details/[id]",
-      "renderMode": "static",
       "getPrerenderParams": "./prerender-params.js"
     }
   ]
