@@ -1,11 +1,8 @@
 {
   "routes": [
     {
-      "src": "/details/:id",
-      "dest": "/details/[id]",
-      "prerender": {
-        "getPrerenderParams": "./prerender-params.js"
-      }
+      "src": "/check-out/(?<id>[^/]+)",
+      "dest": "/check-out/[id]"
     }
   ]
 }
