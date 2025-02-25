@@ -102,7 +102,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": ["./node_modules/flowbite/dist/flowbite.min.js"]
+            "scripts": []
           }
         }
       }
