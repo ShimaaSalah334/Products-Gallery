@@ -30,7 +30,7 @@ export const routes: Routes = [
       ),
     title: 'product Details',
     data: {
-      renderMode: 'default' // Forces Client-Side Rendering (CSR)
+      renderMode: 'ssr' // or 'default' for standard client-side rendering
     }
   },
   {
