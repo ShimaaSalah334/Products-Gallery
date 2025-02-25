@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { CurrencyPipe } from '@angular/common';
 import { SearchPipe } from '../../shared/pipes/search.pipe';
 import { FormsModule } from '@angular/forms';
+import { FlowbiteService } from '../../core/services/flowbite.service';
 
 
 @Component({
@@ -16,9 +17,15 @@ import { FormsModule } from '@angular/forms';
 export class ProductsComponent implements OnInit {
   @Input() searchTerm: string = '';
   productsList: IProduct[] = []
-  constructor(private products: ProductsService) { }
+
+  constructor(private products: ProductsService, private flowbiteService: FlowbiteService) { }
   ngOnInit(): void {
+    this.flowbiteService.loadFlowbite(flowbite => {
+      // Your custom code here
+      console.log('Flowbite loaded', flowbite);
+    });
     this.displayProducts();
+
   }
   displayProducts() {
     this.products.getProducts().subscribe({

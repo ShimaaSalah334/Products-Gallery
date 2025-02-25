@@ -4,6 +4,7 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { ProductsService } from '../../core/services/products.service';
 import { CurrencyPipe } from '@angular/common';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { FlowbiteService } from '../../core/services/flowbite.service';
 @Component({
   selector: 'app-details',
   imports: [CurrencyPipe, RouterLink, CarouselModule],
@@ -14,7 +15,7 @@ export class DetailsComponent implements OnInit {
   id: string = '';
   productData: IProduct = {} as IProduct;
   relatedProducts: IProduct[] = [];
-  constructor(private activatedRoute: ActivatedRoute, private products: ProductsService) { }
+  constructor(private activatedRoute: ActivatedRoute, private products: ProductsService, private flowbiteService: FlowbiteService) { }
   customOptions: OwlOptions = {
     loop: false,
     mouseDrag: false,
@@ -42,6 +43,10 @@ export class DetailsComponent implements OnInit {
     nav: true
   }
   ngOnInit(): void {
+    this.flowbiteService.loadFlowbite(flowbite => {
+      // Your custom code here
+      console.log('Flowbite loaded', flowbite);
+    });
     this.activatedRoute.paramMap.subscribe({
       next: (p) => {
         this.id = p.get('id') as string
