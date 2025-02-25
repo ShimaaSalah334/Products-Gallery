@@ -31,7 +31,7 @@ The product details page is implemented using **Angular routing**. Each product 
 
 ## Live Demo
 
-Check out the live demo of the project here: [Live Demo Link](#)
+Check out the live demo of the project here: [Live Demo Link](products-gallery-eight.vercel.app)
 
 ## Development server
 
