@@ -14,11 +14,11 @@ This project is ideal for learning Angular, exploring front-end development, or 
 
 ## Styling
 
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling. Tailwind CSS was chosen for its utility-first approach, which allows for rapid and responsive UI development.
+This project uses [Tailwind CSS][https://tailwindcss.com/] for styling. Tailwind CSS was chosen for its utility-first approach, which allows for rapid and responsive UI development.
 
 ## API Integration
 
-This project uses the [Fake Store API](https://fakestoreapi.com/products) to fetch and display product data. The API provides details such as product name, image, price, and description.
+This project uses the [Fake Store API][https://fakestoreapi.com/products] to fetch and display product data. The API provides details such as product name, image, price, and description.
 
 ## Dynamic Routing
 
@@ -31,7 +31,7 @@ The product details page is implemented using **Angular routing**. Each product 
 
 ## Live Demo
 
-Check out the live demo of the project here: [products-gallery-eight.vercel.app]
+Check out the live demo of the project here: [https://products-gallery-eight.vercel.app/#/products]
 
 ## Development server
 
